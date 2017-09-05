@@ -1,57 +1,293 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>TutorialToken - Wallet</title>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Notes </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        
+        <!-- Fonts -->
+        <!-- Lato -->
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-2">
-          <h1 class="text-center">TutorialToken</h1>
-          <hr/>
-          <br/>
-        </div>
-      </div>
+        <!-- CSS -->
 
-      <div id="petsRow" class="row">
-        <div class="col-sm-6 col-sm-push-3 col-md-4 col-md-push-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">My Wallet</h3>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/main.css">
+        <!-- Responsive Stylesheet -->
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+
+    <body id="body">
+
+    	<div id="preloader">
+    		<div class="book">
+    		  <div class="book__page"></div>
+    		  <div class="book__page"></div>
+    		  <div class="book__page"></div>
+    		</div>
+    	</div>
+
+	    <!-- 
+	    Header start
+	    ==================== -->
+	    <div class="navbar-default navbar-fixed-top" id="navigation">
+	        <div class="container">
+	            <!-- Brand and toggle get grouped for better mobile display -->
+	            <div class="navbar-header">
+	                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+	                    <span class="sr-only">Toggle navigation</span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                </button>
+	                <a class="navbar-brand" href="#">
+                        <img class="logo-1" src="images/logo.png" alt="LOGO">
+	                    <img class="logo-2" src="images/logo-2.png" alt="LOGO">
+	                </a>
+	            </div>
+
+	            <!-- Collect the nav links, forms, and other content for toggling -->
+	            <nav class="collapse navbar-collapse" id="navbar">
+	                <ul class="nav navbar-nav navbar-right" id="top-nav">
+	                    <li class="current"><a href="#body">Home</a></li>
+	                    <li><a href="#about">About us</a></li>
+	                    <li><a href="#service">Services</a></li>
+	                    <li><a href="#contact">Contact</a></li>
+	                </ul>
+	            </nav><!-- /.navbar-collapse -->
+	        </div><!-- /.container-fluid -->
+	    </div>
+
+	    <section id="hero-area">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-md-6">
+	                    <div class="block">
+	                        <h1 class="wow fadeInDown">HelpToken - Helping the web</h1>
+	                        <p class="wow fadeInDown" data-wow-delay="0.3s">CodeHelp is a brand new decentralized platfrom where people can help you with your programming questions</p>
+	                        <div class="wow fadeInDown" data-wow-delay="0.3s">
+	                        	<a class="btn btn-default btn-home" href="#about" role="button">Get Started</a>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="col-md-6 wow zoomIn">
+	                    <div class="block">
+	                        <div class="counter text-center">
+	                            <ul id="countdown_dashboard">
+	                                <li>
+	                                    <div class="dash days_dash">
+	                                        <div class="digit">0</div>
+	                                        <div class="digit">0</div>
+	                                        <div class="digit">0</div>
+	                                        <span class="dash_title">Days</span>
+	                                    </div>
+	                                </li>
+	                                <li>
+	                                    <div class="dash hours_dash">
+	                                        <div class="digit">0</div>
+	                                        <div class="digit">0</div>
+	                                        <span class="dash_title">Hours</span>
+	                                    </div>
+	                                </li>
+	                                <li>
+	                                    <div class="dash minutes_dash">
+	                                        <div class="digit">0</div>
+	                                        <div class="digit">0</div>
+	                                        <span class="dash_title">Minutes</span>
+	                                    </div>
+	                                </li>
+	                                <li>
+	                                    <div class="dash seconds_dash">
+	                                        <div class="digit">0</div>
+	                                        <div class="digit">0</div>
+	                                        <span class="dash_title">Seconds</span>
+	                                    </div>
+	                                </li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div><!-- .row close -->
+	        </div><!-- .container close -->
+	    </section><!-- header close -->
+
+
+        <!-- 
+        Service start
+        ==================== -->
+        <section id="service" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="heading wow fadeInUp">
+                        <h2>Our service</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et <br> dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex</p>
+                    </div>
+                    <div class="col-sm-6 col-md-3 wow fadeInLeft">
+                        <div class="service">
+                            <div class="icon-box">
+                            	<span class="icon">
+                                    <i class="ion-android-desktop"></i>   
+                                </span>
+                            </div>
+                            <div class="caption">
+                                <h3>Fully Responsive</h3>
+                                <p>Lorem ipsum dolor sit amet, con-sectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.3s">
+                        <div class="service">
+                            <div class="icon-box">
+                            	<span class="icon">
+                                    <i class="ion-speedometer"></i>   
+                                </span>
+                            </div>
+                            <div class="caption">
+                            	<h3>Speed Optimized</h3>
+                                <p>Lorem ipsum dolor sit amet, con-sectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.6s">
+                        <div class="service">
+                            <div class="icon-box">
+                            	<span class="icon">
+                                    <i class="ion-ios-infinite-outline"></i>   
+                                </span>
+                            </div>
+                            <div class="caption">
+                                <h3>Tons of Feature</h3>
+                                <p>Lorem ipsum dolor sit amet, con-sectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.9s">
+                        <div class="service">
+                            <div class="icon-box">
+                            	<span class="icon">
+                                    <i class="ion-ios-cloud-outline"></i>   
+                                </span>
+                            </div>
+                            <div class="caption">
+                                <h3>Cloud Option</h3>
+                                <p>Lorem ipsum dolor sit amet, con-sectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- .container close -->
+        </section><!-- #service close -->
+<!--
+        <section id="call-to-action" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 wow text-center">
+                        <div class="block">
+                            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Enter Your Email Address">
+                                <button class="btn btn-default btn-submit" type="submit">Get Notified</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="panel-body">
-              <h4>Balance</h4>
-              <strong>Balance</strong>: <span id="TTBalance"></span> TT<br/><br/>
-              <h4>Transfer</h4>
-              <input type="text" class="form-control" id="TTTransferAddress" placeholder="Address" />
-              <input type="text" class="form-control" id="TTTransferAmount" placeholder="Amount" />
-              <button class="btn btn-primary" id="transferButton" type="button">Transfer</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        </section> #call-to-action close -->
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/web3.min.js"></script>
-    <script src="js/truffle-contract.js"></script>
-    <script src="js/app.js"></script>
-  </body>
+        <!-- 
+        Contact start
+        ==================== -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="block">
+                            <div class="heading wow fadeInUp">
+                                <h2>Join the HelpToken ICO</h2>
+                                <p>Description of the ico, sed do eiusmod tempor incididunt ut labore et <br> dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-5 wow fadeInUp">
+						<div class="block text-left">
+							<div class="sub-heading">
+								<h4>How it works?</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet quos maxime voluptate doloribus, voluptatum nemo vel ipsa in eligendi, ullam. Ducimus consequuntur labore error hic.</p>
+							</div>
+						</div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 wow fadeInUp" data-wow-delay="0.3s">
+                    	<div class="form-group">
+                    	    <form action="#" method="post" id="contact-form">
+                    	        <div class="input-field">
+                    	            <input type="text" class="form-control" placeholder="Your Address" name="name">
+                    	        </div>
+                    	        <div class="input-field">
+                    	            <input type="email" class="form-control" placeholder="Number of tokens" name="email">
+                    	        </div>
+                    	        <div class="input-field">
+                    	            <textarea class="form-control" placeholder="Your Message" rows="3" name="message"></textarea>
+                    	        </div>
+                    	        <button class="btn btn-send" type="submit">Send me</button>
+                    	    </form>
+
+                    	    <div id="success">
+                    	        <p>Your Message was sent successfully</p>
+                    	    </div>
+                    	    <div id="error">
+                    	        <p>Your Message was not sent successfully</p>
+                    	    </div>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section clas="wow fadeInUp">
+        	<div class="map-wrapper">
+        	</div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="block">
+                            <p>Copyright &copy; <a href="http://nenadpalinkasevic.me">HelpToken</a>| All right reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- Js -->
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="js/vendor/jquery-1.10.2.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script src="js/jquery.lwtCountdown-1.0.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/jquery.form.js"></script>
+        <script src="js/jquery.nav.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/web3.min.js"></script>
+        <script src="js/truffle-contract.js"></script>
+        <script src="js/app.js"></script>
+        
+    </body>
 </html>
