@@ -1,38 +1,8 @@
 pragma solidity ^0.4.4;
 
-library SafeMath {
-  function mul(uint256 a, uint256 b) internal constant returns (uint256) {
-    uint256 c = a * b;
-    assert(a == 0 || c / a == b);
-    return c;
-  }
+import './lib/SafeMath.sol';
 
-  function div(uint256 a, uint256 b) internal constant returns (uint256) {
-    // assert(b > 0); // Solidity automatically throws when dividing by 0
-    uint256 c = a / b;
-    // assert(a == b * c + a % b); // There is no case in which this doesn't hold
-    return c;
-  }
-
-  function sub(uint256 a, uint256 b) internal constant returns (uint256) {
-    assert(b <= a);
-    return a - b;
-  }
-
-  function add(uint256 a, uint256 b) internal constant returns (uint256) {
-    uint256 c = a + b;
-    assert(c >= a);
-    return c;
-  }
-}
-
-//The ERC20 standard token interface (just basic methods)
-contract ERC20 {
-     function totalSupply() constant returns (uint totalSupply);
-     function balanceOf(address _owner) constant returns (uint balance);
-     function transfer(address _to, uint _value) returns (bool success);
-     event Transfer(address indexed _from, address indexed _to, uint _value);
-}
+import './ERC20.sol';
 
 contract HelpToken is ERC20 {
     
@@ -40,7 +10,7 @@ contract HelpToken is ERC20 {
     
     string public name = "HelpToken";
     string public token = "HT";
-    uint256 public decimals = 6;
+    uint256 public decimals = 18;
     uint256 public NUM_TOKENS = 1000000; // 1 milion of initial NUM_TOKENS
     
     address public owner;
@@ -78,5 +48,4 @@ contract HelpToken is ERC20 {
         return NUM_TOKENS;
     }
     
-
 }
