@@ -77,13 +77,14 @@ App = {
 
       var num_eth = amount / 1000;
 
-      App.contracts.Crowdsale.deployed().then(function(instance) {
+      App.contracts.Crowdsale.at("0x854a8fE852b3805ECB7821F42AE10D7C7961E423").then(function(instance) {
         crowdsaleInstance = instance;
 
          return crowdsaleInstance.buyTokens.sendTransaction(account, {from: account, value: web3.toWei(num_eth.toString(), 'ether')});
 
       }).then(function(res) {
           console.log("Congratulations you bought " + amount + " tokens!!!");
+          alert("Congratulations you bought " + amount + " tokens!!!");
           $('#num_tokens').val("");
       })
       .catch(function(err) {

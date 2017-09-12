@@ -9,7 +9,7 @@ contract HelpToken is ERC20 {
     using SafeMath for uint256;
     
     string public name = "HelpToken";
-    string public token = "HT";
+    string public token = "HLT";
     uint256 public decimals = 18;
     uint256 public NUM_TOKENS = 1000000; // 1 milion of initial NUM_TOKENS
     uint256 public NUM_TOKENS_FOR_ICO = 200000;
@@ -18,6 +18,7 @@ contract HelpToken is ERC20 {
     address public ico;
     
     mapping (address => uint256) balances;
+    mapping (address => mapping (address => uint256)) allowed;
 
     modifier onlyOwner {
         require(msg.sender == owner);
@@ -62,4 +63,32 @@ contract HelpToken is ERC20 {
         return NUM_TOKENS;
     }
     
+    
+    function transferFrom(address _from, address _to, uint256 _value) returns (bool) {
+        require(_to != address(0));
+    
+        var _allowance = allowed[_from][msg.sender];
+    
+        balances[_from] = balances[_from].sub(_value);
+        balances[_to] = balances[_to].add(_value);
+        allowed[_from][msg.sender] = _allowance.sub(_value);
+        Transfer(_from, _to, _value);
+        return true;
+   }
+
+  function approve(address _spender, uint256 _value) returns (bool) {
+
+
+    require((_value == 0) || (allowed[msg.sender][_spender] == 0));
+
+    allowed[msg.sender][_spender] = _value;
+    Approval(msg.sender, _spender, _value);
+    return true;
+  }
+
+  function allowance(address _owner, address _spender) constant returns (uint256 remaining) {
+    return allowed[_owner][_spender];
+  }
+    
 }
+
