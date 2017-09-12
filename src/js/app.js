@@ -36,15 +36,31 @@ App = {
 
   bindEvents: function() {
     $(document).on('click', '#transferButton', App.handleTransfer);
+    $(document).on('change paste keyup', '#num_tokens', App.priceInEther);
+  },
+
+  priceInEther: function () {
+    var value = $('#num_tokens').val();
+
+    if(!$.isNumeric(value)) {
+      return;
+    }
+
+    var num_eth = $('#num_tokens').val() / 1000;
+
+    $('#eth_price').val(num_eth + " ether");
   },
 
   handleTransfer: function() {
     event.preventDefault();
 
-    var amount = parseInt($('#TTTransferAmount').val());
-    var toAddress = $('#TTTransferAddress').val();
+    var amount = parseInt($('#num_tokens').val());
 
-    console.log('Transfer ' + amount + ' TT to ' + toAddress);
+    if(!$.isNumeric(amount)) {
+      return;
+    }
+
+    console.log('Number of tokens: ' + amount);
 
     var crowdsaleInstance;
 
@@ -55,16 +71,22 @@ App = {
 
       var account = accounts[0];
 
+      if(amount < 1) {
+        return;
+      }
+
+      var num_eth = amount / 1000;
+
       App.contracts.Crowdsale.deployed().then(function(instance) {
         crowdsaleInstance = instance;
 
-          crowdsaleInstance.token.call().then((res) => {
-            console.log(res);
-          });
+         return crowdsaleInstance.buyTokens.sendTransaction(account, {from: account, value: web3.toWei(num_eth.toString(), 'ether')});
 
-         return crowdsaleInstance.buyTokens.sendTransaction(account, {from: account, value: web3.toWei('1','ether')});
-
-      }).catch(function(err) {
+      }).then(function(res) {
+          console.log("Congratulations you bought " + amount + " tokens!!!");
+          $('#num_tokens').val("");
+      })
+      .catch(function(err) {
         console.log(err.message);
       });
     });
