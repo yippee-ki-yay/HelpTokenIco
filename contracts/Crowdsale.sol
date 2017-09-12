@@ -14,7 +14,7 @@ contract Crowdsale {
 
     address public ownerAddress;
     
-    event TokenBought(address indexed buyer, uint256 indexed amountInWei);
+    event TokenBought(address indexed buyer, uint256 indexed amountInWei, bool indexed transferSuccess);
     
     function Crowdsale(address _ownerAddress, uint256 numDaysSaleLasts) {
         
@@ -24,7 +24,7 @@ contract Crowdsale {
         token = new HelpToken(msg.sender, this);
 
         ownerAddress = _ownerAddress;
-        tokenPrice = costPerEther * 1 ether;
+        tokenPrice = 1 ether / costPerEther;
         deadline = now + numDaysSaleLasts * 1 days;
     }
     
@@ -38,9 +38,9 @@ contract Crowdsale {
         
         uint256 tokenAmount = amountInWei.div(tokenPrice);
         
-        TokenBought(buyer, amountInWei);
-        
-        token.transfer(buyer, tokenAmount);
+        bool result = token.transfer(buyer, tokenAmount);
+
+        TokenBought(buyer, amountInWei, result);
         
         ownerAddress.transfer(amountInWei);
         
