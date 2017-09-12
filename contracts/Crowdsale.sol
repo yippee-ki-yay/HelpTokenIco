@@ -20,7 +20,9 @@ contract Crowdsale {
         
         require(_ownerAddress != 0x0);
 
-        token = new HelpToken();
+        //the first param it the user who started the ICO and the second is the ICO contract address
+        token = new HelpToken(msg.sender, this);
+
         ownerAddress = _ownerAddress;
         tokenPrice = costPerEther * 1 ether;
         deadline = now + numDaysSaleLasts * 1 days;
